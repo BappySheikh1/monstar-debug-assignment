@@ -5,21 +5,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Site</title>
+    <!-- Bootstrap cdn link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-    <header>
-
-    </header>
-    <main>
-        <section>
-            <article>
-
-            </article>
-            <article>
+    <header class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Speed Typer</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Blog</a>
+                  </li>
+                </ul>
                 
-            </article>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main class="my-5">
+        <section class="container ">
+           
+            <div class="text-white bg-dark rounded p-3 mb-3">
+             <h3>প্রশ্ন-১ sessionStorage এবং LocalStorage এর মধ্য পার্থক্য কী?</h3>
+
+                <p>উত্তরঃ session storage-কোনো একটা website এর storage! কোনো একটা জিনিস কে store করার জন্য একটা জাইগা সেখানে যে জিনিস টা রাখি সেটা temporary ! যতক্ষণ browser চালউ থাকবে ততক্ষণ পর্যন্ত থাকে ! যদি browser টাকে close করে দেয় তাহলে session Storage এর জিনিস গুলো নাই হয়ে যাবে ! 
+                    <br>
+                LocalStorage- permanent সেখানে যেকোনো একটা জিনিস রাখলে browser close করে দিলেও Tab বন্ধ করে দিলে আবার চালু করলে পাওয়া যাবে !    
+                
+                </p> 
+            </div>
+            <div class="text-white bg-dark rounded p-3 mb-3">
+             <h3>প্রশ্ন-২ Block scope এবং  Global scope এর মধ্য পার্থক্য কী?</h3>
+
+                <p>উত্তরঃ Block scope- টা হচ্ছে সেকেন্ড ব্রাকেট এই  block scope এর ভিতর let const  ব্যবহার করা উচিৎ কারণ let const Block scope এর বাইরে কল করা উচিৎ না ! কল করলে error দেয় ! কিন্তু var দিয়ে declear করলে hoisting হয়ে সবার উপরে নিয়ে যায় এর জন্য var ব্যবহার ঠিক নয় !
+                    <br>
+                    Global Scope-একটি প্রোগ্রামিং এনভায়রনমেন্টে, গ্লোবাল স্কোপ হল সেই স্কোপ যা অন্যান্য সমস্ত স্কোপের মধ্যে রয়েছে এবং দৃশ্যমান।
+                    ক্লায়েন্ট-সাইড জাভাস্ক্রিপ্টে, গ্লোবাল স্কোপ হল সাধারণত ওয়েব পেজ যার ভিতরে সমস্ত কোড চালানো হচ্ছে
+                
+                </p> 
+            </div>
+           
+            <div class="text-white bg-dark rounded p-3 mb-3">
+             <h3>প্রশ্ন-৩ JavaScript এর Event Loop কিভাবে কাজ করে?</h3>
+
+                <p>উত্তরঃ 
+                    Event loop (ইভেন্ট লুপ) জাভাস্ক্রিপ্টের একটি সিক্রেট machenism যার মাধ্যমে জাভাস্ক্রিপ্ট single-threaded প্রোগ্রামিং ল্যাঙ্গুয়েজ হওয়া সত্ত্বেও বাহ্যিক ভাবে multi-threaded প্রোগ্রামিং ল্যাঙ্গুয়েজের মত কাজ করে। ইভেন্ট লুপ গভীরভাবে call stack কে পর্যবেক্ষণ করে এবং যদি call stack খালি বা empty থাকে তবে Event queue থেকে Task call stack এ পাঠায় execution সম্পন্ন করার জন্য।
+                    আমরা সকলে জানি, জাভাস্ক্রিপ্ট একটি সিঙ্গেল-থ্রেডেড asynchronous প্রোগ্রামিং ল্যাঙ্গুয়েজ । এইটা বিষয় লক্ষ্য করেছেন কি, একটা ল্যাঙ্গুয়েজ কি করে একই সাথে সিঙ্গেল-থ্রেডেড আবার asynchronous  হতে পারে? আসলে বিষয়টা হল, জাভাস্ক্রিপ্ট একটা সিঙ্গেল-থ্রেডেড ল্যাঙ্গুয়েজ; তার মানে হল জাভাস্ক্রিপ্ট একসাথে একই সময়ে একটা মাত্র কাজ  করতে পারে। আর asynchronous বিষয়টা জাভাস্ক্রিপ্ট ল্যাঙ্গুয়েজের কোন বিষয় না, এটি নিয়ন্ত্রিত হয় ব্রাউজার Enviornment এর মাধ্যমে।
+                </p> 
+            </div>
+            <div class="text-white bg-dark rounded p-3 mb-3">
+                <h3>প্রশ্ন-৪ কতো ভাবে আমরা Undefiend পেয়ে থাকি</h3>
+                <p>
+                  type of Undefiend -8 ways
+                  <br>
+                  1.variable that is not initialized will give Undefiend !
+                  2.function with no return !
+                  3.parameter that is not passed will be Undefiend !
+                  4.if return has nothing on the right side will return Undefiend !
+                  5.কোনো একটা property by default ভাবে থাকে object এর ভিতর না থাকে তাহলে Undefiend দেখায় !
+                  6. একটা array এর ভিতর যদি value এর বেশি index দিয়ে খোজা হয় তাহলে Undefiend দেখায় !
+                  7.একটা Array Element Delete করলে output Undefiend দেখায় !
+                  8. ডিরেক্ট একটা variable এর সাথে Undefiend সেট করলে output Undefiend দেখায় !
+                </p>
+            </div>
+           
         </section>
     </main>
-    
+    <!-- bootstrap cdn link for js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
